@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  /* padding: 5px 10px; */
+  background: #1e293b;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.content {
+  flex: 1;
+  padding: 10px;
+  background: #f1f5f9;
+  overflow-y: auto;
+}
+
+
+.placeholder {
+  text-align: center;
+  margin-top: 100px;
+  color: gray;
+}
