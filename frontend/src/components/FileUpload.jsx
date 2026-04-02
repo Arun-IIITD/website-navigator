@@ -21,7 +21,8 @@ export default function FileUpload({ setUrls }) {
       formData.append("file", file);
 
       const res = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://website-navigator-ssf7.onrender.com/api/upload",
+        //"http://localhost:5000/api/upload",
         formData
       );
 
