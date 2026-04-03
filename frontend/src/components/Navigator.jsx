@@ -6,6 +6,19 @@ export default function Navigator({ urls }) {
   const [blocked, setBlocked] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const getWebsiteName = (url) => {
+  try {
+    const hostname = new URL(url).hostname;
+
+    return hostname
+      .replace("www.", "")
+      .split(".")[0]
+      .toUpperCase();
+  } catch {
+    return "Unknown";
+  }
+};
+
   useEffect(() => {
     setBlocked(false);
     setLoading(true);
@@ -26,8 +39,10 @@ export default function Navigator({ urls }) {
     <div className="container">
 
       <div className="info">
-        {index + 1} / {urls.length}
+        {getWebsiteName(currentUrl)}
       </div>
+
+    
 
       <div className="frame-container">
         {loading && !isBlocked && <p className="loader">Loading...</p>}
@@ -60,14 +75,14 @@ export default function Navigator({ urls }) {
           onClick={() => setIndex(index - 1)}
           disabled={index === 0}
         >
-        Prev
+          ← Prev
         </button>
 
         <button
           onClick={() => setIndex(index + 1)}
           disabled={index === urls.length - 1}
         >
-          Next
+            Next →
         </button>
       </div>
 

@@ -6,9 +6,9 @@ const parseFile = async (filePath) => {
   const sheet = workbook.Sheets[workbook.SheetNames[0]];
   const data = XLSX.utils.sheet_to_json(sheet);
 
-  fs.unlinkSync(filePath); // delete file after reading
+  fs.unlinkSync(filePath); 
 
-  // Assume column name is "url"
+  
   const urls = data.map(row => row.url).filter(Boolean);
 
   return urls;
