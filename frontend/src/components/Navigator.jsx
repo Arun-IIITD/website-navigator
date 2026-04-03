@@ -38,9 +38,14 @@ export default function Navigator({ urls }) {
   return (
     <div className="container">
 
-      <div className="info">
-        {getWebsiteName(currentUrl)}
-      </div>
+    <div className="info">
+        <span className="site-name">
+        🌐  {getWebsiteName(currentUrl)}
+        </span>
+        <span className="site-url">
+          {currentUrl}
+        </span>
+    </div>
 
     
 
