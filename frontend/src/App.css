@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
 }
 
 .app {
@@ -10,24 +11,89 @@ body {
 }
 
 .header {
-  background: #1e293b;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
   color: white;
+  background: linear-gradient(90deg, #1e293b, #0f172a);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-
 .content {
   flex: 1;
-  padding: 10px;
-  background: #f1f5f9;
   overflow-y: auto;
+  position: relative;
+  background: url("/assets/webs.png") no-repeat center center/cover;
 }
 
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+.content > * {
+  position: relative;
+  z-index: 1;
+}
 
 .placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
   text-align: center;
-  margin-top: 100px;
-  color: gray;
+  color: #1e293b;
+}
+
+.placeholder h1 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.placeholder p {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.upload-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  width: 800px;
+  min-height: 180px;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
 }

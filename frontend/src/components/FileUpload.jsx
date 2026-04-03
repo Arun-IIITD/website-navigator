@@ -35,6 +35,7 @@ export default function FileUpload({ setUrls }) {
   };
 
   return (
+
     <div className="upload-container">
       <h2>📂 Upload File</h2>
 
@@ -44,13 +45,17 @@ export default function FileUpload({ setUrls }) {
         className="file-input"
       />
 
-      {/* {file && <p className="file-name">Selected: {file.name}</p>} */}
+    
 
       <button onClick={handleUpload} disabled={loading}>
         {loading ? "Uploading..." : "Upload"}
       </button>
 
+      <p>Upload a file to start navigating websites.</p>
+
       {error && <p className="error">{error}</p>}
     </div>
+
+
   );
 }
